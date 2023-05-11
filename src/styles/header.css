@@ -1,0 +1,76 @@
+.header main {
+    z-index: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+
+    /* background: #0b0a0d;
+
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .6); */
+}
+
+.header main .logo {
+    position: fixed;
+    top: 20px;
+    left: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, .12);
+
+    width: 400px;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.header main .logo .container {
+    display: grid;
+}
+
+.header main .logo .container #dynamic-txt {
+    white-space: nowrap;
+    overflow: hidden;
+
+    color: var(--secondary);
+
+    width: 4.8ch;
+
+    border-right: 0.2rem solid var(--primary);
+
+    animation: blink .5s step-end alternate infinite;
+}
+
+.header main .quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color);
+    font-size: 2rem;
+
+    width: 100%;
+    height: 100%;
+}
+
+.header .colorBar {
+    width: 1000px;
+    height: 10px;
+    margin: 0 auto;
+
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary) 30%, var(--secondary) 70%);
+    box-shadow: 1px 1px 5px var(--shadow);
+}
