@@ -1,0 +1,36 @@
+.initial {
+    display: flex;
+
+    width: 100%;
+    height: 250px;
+    padding: 10px 0;
+}
+
+.initial .table {
+    width: 800px;
+    height: 100%;
+}
+
+.initial .table table {
+    width: 800px;
+    margin: 0;
+    padding: 0;
+
+    border-collapse: collapse;
+}
+
+.initial .table table td,
+.initial .table table th {
+    text-align: center;
+
+    padding: 10px 3px;
+}
+
+.initial .table table thead {
+    color: var(--primary);
+}
+
+.initial .graph {
+    width: 400px;
+    height: 100%;
+}

@@ -1,0 +1,26 @@
+{
+    "initial": [
+        {
+            "name": "New car",
+            "amount": 3,
+            "cost": 10000
+        },
+        {
+            "name": "Varnishing car",
+            "amount": 3,
+            "cost": 8000
+        }
+    ],
+    "fixed": [
+        {
+            "name": "Hosting website",
+            "amount": 1,
+            "cost": 50
+        },
+        {
+            "name": "Fuel",
+            "amount": 3,
+            "cost": 300
+        }
+    ]
+}
