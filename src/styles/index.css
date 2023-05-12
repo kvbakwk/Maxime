@@ -22,6 +22,7 @@ body {
   --shadow: rgba(0, 0, 0, 0.12);
   --icon: #141414;
   --title: rgba(0, 0, 0, .4);
+  --switch: #202020;
 }
 
 body.dark {
@@ -36,6 +37,7 @@ body.dark {
   --shadow: rgba(0, 0, 0, 0.6);
   --icon: #ebebeb;
   --title: #888;
+  --switch: #e0e0e0;
 }
 
 .switch {
@@ -47,7 +49,7 @@ body.dark {
   width: 25px;
   height: 25px;
 
-  background-color: var(--text);
+  background-color: var(--switch);
   border-radius: 50%;
 
   cursor: pointer;
