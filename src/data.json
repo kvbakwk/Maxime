@@ -3,12 +3,12 @@
         {
             "name": "New car",
             "amount": 3,
-            "cost": 10000
+            "cost": 8000
         },
         {
             "name": "Varnishing car",
             "amount": 3,
-            "cost": 8000
+            "cost": 5000
         }
     ],
     "fixed": [
