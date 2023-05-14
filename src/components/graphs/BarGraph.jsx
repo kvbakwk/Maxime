@@ -21,17 +21,17 @@ ChartJS.register(
 const BarGraph = ({ data }) => {
 
     const graphData = {
-        labels: ['Full Costs'],
+        labels: ['Rok', 'Miesiąc'],
         datasets: [
             {
-                label: 'Initial',
-                data: [data.initial[0].cost * data.initial[0].amount + data.initial[1].cost * data.initial[1].amount],
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                label: 'Koszty początkowe',
+                data: [data.initial[0].cost * data.initial[0].amount + data.initial[1].cost * data.initial[1].amount, (data.initial[0].cost * data.initial[0].amount + data.initial[1].cost * data.initial[1].amount) / 12],
+                backgroundColor: '#913fe2',
             },
             {
-                label: 'Fixed',
-                data: [(data.fixed[0].cost * data.fixed[0].amount + data.fixed[1].cost * data.fixed[1].amount) * 12],
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                label: 'Koszty stałe',
+                data: [(data.fixed[0].cost * data.fixed[0].amount + data.fixed[1].cost * data.fixed[1].amount) * 12, data.fixed[0].cost * data.fixed[0].amount + data.fixed[1].cost * data.fixed[1].amount],
+                backgroundColor: '#4090eb',
             },
         ],
     };

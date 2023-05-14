@@ -1,26 +1,31 @@
 {
     "initial": [
         {
-            "name": "New car",
+            "name": "Samochód",
             "amount": 3,
             "cost": 8000
         },
         {
-            "name": "Varnishing car",
+            "name": "Lakierowanie samochodu",
             "amount": 3,
-            "cost": 5000
+            "cost": 4000
         }
     ],
     "fixed": [
         {
-            "name": "Hosting website",
+            "name": "Hostowanie usług",
             "amount": 1,
-            "cost": 50
+            "cost": 100
         },
         {
-            "name": "Fuel",
+            "name": "Paliwo",
             "amount": 3,
             "cost": 300
+        },
+        {
+            "name": "Marketing",
+            "amount": 4,
+            "cost": 450
         }
     ]
 }

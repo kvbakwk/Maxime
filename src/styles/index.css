@@ -13,6 +13,8 @@ body {
 
   background: var(--backgroundLight);
 
+  overflow-x: hidden;
+
   --primary: #913fe2;
   --primaryHover: #913fe2dd;
   --secondary: #4090eb;
@@ -53,4 +55,51 @@ body.dark {
   border-radius: 50%;
 
   cursor: pointer;
+}
+
+.type {
+  z-index: 200;
+  position: fixed;
+  bottom: 10px;
+  left: calc(50vw - 250px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 50px;
+}
+
+.type button {
+  color: var(--primary);
+  font-family: 'Work Sans', sans-serif;
+  font-size: .9rem;
+  text-transform: none;
+
+  width: 130px;
+
+  border-color: var(--primary);
+
+  transition: .2s ease-in-out;
+}
+
+.type button:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.type button:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.type button.Mui-selected {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+.type button.Mui-selected:hover {
+  color: #fff;
+  background-color: var(--primaryHover);
 }

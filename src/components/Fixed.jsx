@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import '../styles/initial.css'
+import '../styles/fixed.css'
 
 import CircleGraph from './graphs/CircleGraph'
 
-const Initial = ({ data, show }) => {
+const Fixed = ({ data, show }) => {
 
     const [fullcost, setFullcost] = useState();
 
     useEffect(() => {
         let cost = 0;
 
-        data.initial.forEach(element => {
+        data.fixed.forEach(element => {
             cost += element.amount * element.cost
         })
 
@@ -18,14 +18,15 @@ const Initial = ({ data, show }) => {
     }, [data])
 
     const graphData = {
-        labels: data.initial.map(element => element.name),
+        labels: data.fixed.map(element => element.name),
         datasets: [
             {
                 label: 'Koszty',
-                data: data.initial.map(element => element.cost * element.amount),
+                data: data.fixed.map(element => element.cost * element.amount),
                 backgroundColor: [
+                    '#4090eb',
                     '#ffffff',
-                    '#913fe2',
+                    '#913fe2'
                 ],
                 borderWidth: 0,
             },
@@ -34,7 +35,7 @@ const Initial = ({ data, show }) => {
 
 
     return (
-        <div className="initial" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
+        <div className="fixed" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
             <div className="table">
                 <table>
                     <thead>
@@ -47,7 +48,7 @@ const Initial = ({ data, show }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.initial.map((element, index) => (
+                        {data.fixed.map((element, index) => (
                             <tr key={element.name}>
                                 <td>{index + 1}</td>
                                 <td>{element.name}</td>
@@ -75,4 +76,4 @@ const Initial = ({ data, show }) => {
     );
 }
 
-export default Initial;
+export default Fixed;
