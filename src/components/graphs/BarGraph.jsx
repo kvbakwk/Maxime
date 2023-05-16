@@ -56,16 +56,19 @@ const BarGraph = ({ data }) => {
                 label: 'Koszty początkowe',
                 data: [fullcostInitial, fullcostInitial / 12],
                 backgroundColor: '#913fe2bb',
+                borderRadius: 3,
             },
             {
                 label: 'Koszty stałe',
                 data: [fullcostFixed, fullcostFixed / 12],
                 backgroundColor: '#4090ebbb',
+                borderRadius: 3,
             },
             {
                 label: 'Koszty zmienne',
                 data: [fullcostVariable, fullcostVariable / 12],
                 backgroundColor: '#ffffffbb',
+                borderRadius: 3,
             }
         ],
     };

@@ -1,4 +1,4 @@
-.initial {
+.costs {
     position: absolute;
 
     grid-area: 1 / 1 / 2 / 2;
@@ -16,7 +16,7 @@
     transition: opacity .4s ease-in-out;
 }
 
-.initial .table {
+.costs .table {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@
     height: 100%;
 }
 
-.initial .table table {
+.costs .table table {
     width: 800px;
     margin: 0;
     padding: 0;
@@ -33,18 +33,18 @@
     border-collapse: collapse;
 }
 
-.initial .table table td,
-.initial .table table th {
+.costs .table table td,
+.costs .table table th {
     text-align: center;
 
     padding: 10px 3px;
 }
 
-.initial .table table thead {
+.costs .table table thead {
     color: var(--primary);
 }
 
-.initial .graph {
+.costs .graph {
     width: 400px;
     height: 100%;
 }

@@ -77,6 +77,7 @@ const LineGraph = ({ data }) => {
                 label: 'Koszty początkowe',
                 data: fullcostInitial.map(element => element),
                 backgroundColor: '#913fe2bb',
+                tension: 0.2,
                 borderWidth: 0
             },
             {
@@ -84,6 +85,7 @@ const LineGraph = ({ data }) => {
                 label: 'Koszty stałe',
                 data: fullcostFixed.map(element => element),
                 backgroundColor: '#4090ebbb',
+                tension: 0.2,
                 borderWidth: 0
             },
             {
@@ -91,6 +93,7 @@ const LineGraph = ({ data }) => {
                 label: 'Koszty zmienne',
                 data: fullcostVariable.map(element => element),
                 backgroundColor: '#ffffffbb',
+                tension: 0.2,
                 borderWidth: 0
             }
         ],

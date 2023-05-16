@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
-import '../styles/fixed.css'
 
-import CircleGraph from './graphs/CircleGraph'
+import CircleGraph from '../graphs/CircleGraph'
 
-const Fixed = ({ data, show }) => {
+const Initial = ({ data, show }) => {
 
     const [fullcost, setFullcost] = useState();
 
     useEffect(() => {
         let cost = 0;
 
-        data.fixed.forEach(element => {
+        data.initial.forEach(element => {
             cost += element.amount * element.cost
         })
 
@@ -18,11 +17,11 @@ const Fixed = ({ data, show }) => {
     }, [data])
 
     const graphData = {
-        labels: data.fixed.map(element => element.name),
+        labels: data.initial.map(element => element.name),
         datasets: [
             {
                 label: 'Koszty',
-                data: data.fixed.map(element => element.cost * element.amount),
+                data: data.initial.map(element => element.cost * element.amount),
                 backgroundColor: [
                     '#ffffff',
                     '#913fe2',
@@ -34,8 +33,9 @@ const Fixed = ({ data, show }) => {
         ],
     };
 
+
     return (
-        <div className="fixed" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
+        <div className="initial costs" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
             <div className="table">
                 <table>
                     <thead>
@@ -43,12 +43,12 @@ const Fixed = ({ data, show }) => {
                             <th>Lp.</th>
                             <th>Nazwa</th>
                             <th>Ilość</th>
-                            <th>Koszt / miesiąc</th>
-                            <th>Koszt całkowity / miesiąc</th>
+                            <th>Koszt / szt.</th>
+                            <th>Koszt całkowity</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {data.fixed.map((element, index) => (
+                        {data.initial.map((element, index) => (
                             <tr key={element.name}>
                                 <td>{index + 1}</td>
                                 <td>{element.name}</td>
@@ -76,4 +76,4 @@ const Fixed = ({ data, show }) => {
     );
 }
 
-export default Fixed;
+export default Initial;

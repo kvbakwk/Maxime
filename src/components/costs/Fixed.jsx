@@ -1,70 +1,66 @@
 import { useState, useEffect } from 'react';
-import '../styles/variable.css'
 
-import CircleGraph from './graphs/CircleGraph'
+import CircleGraph from '../graphs/CircleGraph'
 
-const Variable = ({ data, show }) => {
+const Fixed = ({ data, show }) => {
 
-    const [cost, setCost] = useState([]);
-    const [fullcost, setFullcost] = useState(0);
+    const [fullcost, setFullcost] = useState();
 
     useEffect(() => {
-        let costFull = 0
-        let costOne = 0
-        let array = []
+        let cost = 0;
 
-        data.variable.forEach(variable => {
-            variable.cost.forEach(costL => {
-                costFull += costL
-                costOne += costL
-            })
-            array.push(costOne)
-            costOne = 0
+        data.fixed.forEach(element => {
+            cost += element.amount * element.cost
         })
 
-        setCost(array)
-        setFullcost(costFull)
+        setFullcost(cost)
     }, [data])
 
     const graphData = {
-        labels: data.variable.map(element => element.name),
+        labels: data.fixed.map(element => element.name),
         datasets: [
             {
                 label: 'Koszty',
-                data: data.variable.map((element, index) => cost[index]),
+                data: data.fixed.map(element => element.cost * element.amount),
                 backgroundColor: [
-                    '#4090eb',
                     '#ffffff',
-                    '#913fe2'
+                    '#913fe2',
+                    '#000000',
+                    "#4090eb",
                 ],
                 borderWidth: 0,
             },
         ],
     };
 
-
     return (
-        <div className="variable" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
+        <div className="fixed costs" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
             <div className="table">
                 <table>
                     <thead>
                         <tr>
                             <th>Lp.</th>
                             <th>Nazwa</th>
-                            <th>Koszt / rok</th>
+                            <th>Ilość</th>
+                            <th>Koszt / miesiąc</th>
+                            <th>Koszt całkowity / miesiąc</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {data.variable.map((element, index) => (
+                        {data.fixed.map((element, index) => (
                             <tr key={element.name}>
                                 <td>{index + 1}</td>
                                 <td>{element.name}</td>
-                                <td>{cost[index]} zł</td>
+                                <td>{element.amount}</td>
+                                <td>{element.cost} zł</td>
+                                <td>{element.amount * element.cost} zł</td>
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <th style={{ color: 'var(--primary)' }}>Suma</th>
                             <td>{fullcost} zł</td>
@@ -75,8 +71,8 @@ const Variable = ({ data, show }) => {
             <div className="graph">
                 <CircleGraph data={data} graphData={graphData} />
             </div>
-        </div >
+        </div>
     );
 }
 
-export default Variable;
+export default Fixed;
