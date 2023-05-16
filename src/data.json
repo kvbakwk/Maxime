@@ -3,29 +3,84 @@
         {
             "name": "Samochód",
             "amount": 3,
-            "cost": 8000
+            "cost": 8000,
+            "month": 0
         },
         {
             "name": "Lakierowanie samochodu",
             "amount": 3,
-            "cost": 4000
+            "cost": 3500,
+            "month": 1
+        },
+        {
+            "name": "Licencja WinRAR",
+            "amount": 1,
+            "cost": 149,
+            "month": 2
+        },
+        {
+            "name": "GitHub Copilot",
+            "amount": 4,
+            "cost": 413,
+            "month": 2
         }
     ],
     "fixed": [
         {
             "name": "Hostowanie usług",
             "amount": 1,
-            "cost": 100
-        },
-        {
-            "name": "Paliwo",
-            "amount": 3,
-            "cost": 300
+            "cost": 120
         },
         {
             "name": "Marketing",
             "amount": 4,
-            "cost": 450
+            "cost": 250
+        },
+        {
+            "name": "Subskrypcja Adobe",
+            "amount": 1,
+            "cost": 166
+        },
+        {
+            "name": "Sublime Business",
+            "amount": 1,
+            "cost": 20
+        }
+    ],
+    "variable": [
+        {
+            "name": "Paliwo",
+            "cost": [
+                0,
+                0,
+                0,
+                200,
+                220,
+                250,
+                235,
+                280,
+                300,
+                300,
+                285,
+                295
+            ]
+        },
+        {
+            "name": "Wynagrodzenie",
+            "cost": [
+                0,
+                0,
+                0,
+                3700,
+                3700,
+                4300,
+                3850,
+                3900,
+                4300,
+                3700,
+                3800,
+                4300
+            ]
         }
     ]
 }

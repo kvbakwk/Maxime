@@ -25,42 +25,72 @@ ChartJS.register(
 
 const LineGraph = ({ data }) => {
 
-    const [fullcostFixed, setFullcostFixed] = useState();
+    const [fullcostInitial, setFullcostInitial] = useState([]);
+    const [fullcostFixed, setFullcostFixed] = useState([]);
+    const [fullcostVariable, setFullcostVariable] = useState([]);
 
     useEffect(() => {
-        let cost = 0;
+        let arrayInitial = []
+        let arrayVariable = []
+        let arrayFixed = []
+        let one = 0
+
+        for (let i = 0; i < 12; i++) {
+            for (let element of data.initial) {
+                if (element.month === i)
+                    one = one + element.cost * element.amount
+            }
+            arrayInitial.push(one)
+            one = 0
+        }
+
+        one = 0
 
         data.fixed.forEach(element => {
-            cost += element.amount * element.cost
+            one += element.amount * element.cost
         })
+        for (let i = 0; i < 12; i++) {
+            arrayFixed.push(one)
+        }
 
-        setFullcostFixed(cost)
+        one = 0
+
+        for (let i = 0; i < 12; i++) {
+            for (let element of data.variable) {
+                one += element.cost[i]
+            }
+            arrayVariable.push(one)
+            one = 0
+        }
+
+        setFullcostInitial(arrayInitial)
+        setFullcostFixed(arrayFixed)
+        setFullcostVariable(arrayVariable)
     }, [data])
 
 
     const graphData = {
-        labels: ['April', 'May', 'June', 'July', 'Ougust', 'October', 'September', 'November', "December", 'January', 'February', 'March'],
+        labels: ['Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', "Listopad", 'Grudzień', "Styczeń", "Luty", "Marzec"],
         datasets: [
             {
                 fill: true,
                 label: 'Koszty początkowe',
-                data: [
-                    0, data.initial[0].cost * data.initial[0].amount, 0, 0,
-                    0, 0, data.initial[1].cost * data.initial[1].amount, 0,
-                    0, 0, 0, 0, 0
-                ],
-                backgroundColor: '#913fe2',
+                data: fullcostInitial.map(element => element),
+                backgroundColor: '#913fe2bb',
                 borderWidth: 0
             },
             {
                 fill: true,
                 label: 'Koszty stałe',
-                data: [
-                    fullcostFixed, fullcostFixed, fullcostFixed, fullcostFixed,
-                    fullcostFixed, fullcostFixed, fullcostFixed, fullcostFixed,
-                    fullcostFixed, fullcostFixed, fullcostFixed, fullcostFixed,
-                ],
-                backgroundColor: '#4090eb',
+                data: fullcostFixed.map(element => element),
+                backgroundColor: '#4090ebbb',
+                borderWidth: 0
+            },
+            {
+                fill: true,
+                label: 'Koszty zmienne',
+                data: fullcostVariable.map(element => element),
+                backgroundColor: '#ffffffbb',
                 borderWidth: 0
             }
         ],

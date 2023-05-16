@@ -13,7 +13,7 @@
     height: 400px;
     padding: 10px 0;
 
-    transition: transform 1s ease-in-out, opacity .8s ease-in-out;
+    transition: opacity .4s ease-in-out;
 }
 
 .fixed .table {

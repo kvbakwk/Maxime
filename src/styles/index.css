@@ -60,7 +60,7 @@ body.dark {
 .type {
   z-index: 200;
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   left: calc(50vw - 250px);
 
   display: flex;

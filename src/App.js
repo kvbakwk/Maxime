@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import { Button, ButtonGroup, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
 function App() {
 
@@ -27,6 +27,9 @@ function App() {
           </ToggleButton>
           <ToggleButton value={1} onClick={() => { setType(1) }}>
             Stałe
+          </ToggleButton>
+          <ToggleButton value={2} onClick={() => { setType(2) }}>
+            Zmienne
           </ToggleButton>
         </ToggleButtonGroup>
       </div >

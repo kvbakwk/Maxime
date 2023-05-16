@@ -24,15 +24,15 @@ const Fixed = ({ data, show }) => {
                 label: 'Koszty',
                 data: data.fixed.map(element => element.cost * element.amount),
                 backgroundColor: [
-                    '#4090eb',
                     '#ffffff',
-                    '#913fe2'
+                    '#913fe2',
+                    '#000000',
+                    "#4090eb",
                 ],
                 borderWidth: 0,
             },
         ],
     };
-
 
     return (
         <div className="fixed" style={show ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: 0 }}>
@@ -43,8 +43,8 @@ const Fixed = ({ data, show }) => {
                             <th>Lp.</th>
                             <th>Nazwa</th>
                             <th>Ilość</th>
-                            <th>Cena / szt.</th>
-                            <th>Koszt całkowity</th>
+                            <th>Koszt / miesiąc</th>
+                            <th>Koszt całkowity / miesiąc</th>
                         </tr>
                     </thead>
                     <tbody>

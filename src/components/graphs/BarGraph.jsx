@@ -7,6 +7,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -20,19 +21,52 @@ ChartJS.register(
 
 const BarGraph = ({ data }) => {
 
+    const [fullcostInitial, setFullcostInitial] = useState([]);
+    const [fullcostVariable, setFullcostVariable] = useState([]);
+    const [fullcostFixed, setFullcostFixed] = useState([]);
+
+    useEffect(() => {
+        let initial = 0
+        let variable = 0
+        let fixed = 0
+
+        data.initial.forEach(element => {
+            initial += element.cost * element.amount
+        })
+
+        data.fixed.forEach(element => {
+            fixed += element.amount * element.cost * 12
+        })
+
+        data.variable.forEach(element => {
+            element.cost.forEach(cost => {
+                variable += cost
+            })
+        })
+
+        setFullcostInitial(initial)
+        setFullcostFixed(fixed)
+        setFullcostVariable(variable)
+    }, [data])
+
     const graphData = {
         labels: ['Rok', 'Miesiąc'],
         datasets: [
             {
                 label: 'Koszty początkowe',
-                data: [data.initial[0].cost * data.initial[0].amount + data.initial[1].cost * data.initial[1].amount, (data.initial[0].cost * data.initial[0].amount + data.initial[1].cost * data.initial[1].amount) / 12],
-                backgroundColor: '#913fe2',
+                data: [fullcostInitial, fullcostInitial / 12],
+                backgroundColor: '#913fe2bb',
             },
             {
                 label: 'Koszty stałe',
-                data: [(data.fixed[0].cost * data.fixed[0].amount + data.fixed[1].cost * data.fixed[1].amount) * 12, data.fixed[0].cost * data.fixed[0].amount + data.fixed[1].cost * data.fixed[1].amount],
-                backgroundColor: '#4090eb',
+                data: [fullcostFixed, fullcostFixed / 12],
+                backgroundColor: '#4090ebbb',
             },
+            {
+                label: 'Koszty zmienne',
+                data: [fullcostVariable, fullcostVariable / 12],
+                backgroundColor: '#ffffffbb',
+            }
         ],
     };
 
