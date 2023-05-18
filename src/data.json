@@ -2,14 +2,14 @@
     "initial": [
         {
             "name": "Samochód",
-            "amount": 3,
-            "cost": 8000,
+            "amount": 1,
+            "cost": 12000,
             "month": 0
         },
         {
             "name": "Lakierowanie samochodu",
-            "amount": 3,
-            "cost": 3500,
+            "amount": 1,
+            "cost": 6000,
             "month": 1
         },
         {
@@ -34,7 +34,7 @@
         {
             "name": "Marketing",
             "amount": 4,
-            "cost": 250
+            "cost": 220
         },
         {
             "name": "Subskrypcja Adobe",
