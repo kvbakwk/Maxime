@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 
 body {
   color: var(--text);
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 
   background: var(--backgroundLight);
 
@@ -23,7 +23,7 @@ body {
   --backgroundLight: #e0e0e0;
   --shadow: rgba(0, 0, 0, 0.12);
   --icon: #141414;
-  --title: rgba(0, 0, 0, .4);
+  --title: rgba(0, 0, 0, 0.4);
   --switch: #202020;
 }
 
@@ -73,15 +73,15 @@ body.dark {
 
 .type button {
   color: var(--primary);
-  font-family: 'Work Sans', sans-serif;
-  font-size: .9rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
   text-transform: none;
 
   width: 130px;
 
   border-color: var(--primary);
 
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .type button:first-child {
